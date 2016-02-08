@@ -20,5 +20,9 @@ int main()
     writeFile(10);
     //generateFile(10);
 
+
+    //Quetion 3
+    double pValue = Runs();
+
     return 0;
 }
