@@ -1,4 +1,4 @@
-/* mersenne_twister.h
+﻿/* mersenne_twister.h
  *
  * This is a version of the Mersenne Twister (aka mt19937) that is designed for
  * parallel use. Usage:

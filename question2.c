@@ -1,4 +1,4 @@
-#include "question2.h"
+ï»¿#include "question2.h"
 
 double Frequency(unsigned long *tab, int tabLength, int valLength)
 {
@@ -28,8 +28,8 @@ void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *aesTab, int nb
     // initialisation des graines des generateurs
     srand(rdtsc());  // rand du C
     sgenrand(time(NULL)+(tmp), &mt); // Mersenne-Twister
-    // Initialisation de la clé et du plaintext pour l'AES
-    // 45 est un paramètre qui doit changer à chaque initialisation
+    // Initialisation de la cet du plaintext pour l'AES
+    // 45 est un parametre qui doit changer a chaque initialisation
     init_rand(Kx, Px, NK, NB, 45);
     KeyExpansion(Kex,Kx); // AES : sous-clefs
 
@@ -49,8 +49,10 @@ void qualityTest(int nbr_of_value)
 	word32 mtTab[nbr_of_value];
 	word32 aesTab[nbr_of_value];
 	
-	double pRand = 
-	double
-	double
-	double
+	fillTabs(randTab, vnTab, mtTab, aesTab, nbr_of_value);
+	
+	double pRand = Frequency(randTab, nbr_of_value, 
+	double pVN = 
+	double pMT = 
+	double pAES = 
 }

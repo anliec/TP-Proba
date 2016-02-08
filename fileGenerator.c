@@ -1,4 +1,4 @@
-#include "fileGenerator.h"
+﻿#include "fileGenerator.h"
 
 #include "von_neumann.h"
 #include "aes.h"
@@ -39,10 +39,10 @@ void writeFile(int nbr_of_value)
     word32 output_MT; // sortie pour Mersenne-Twister
 
     ///init files
-    FILE* rand_file = fopen("output/randValue.m","w");
-    FILE* VN_file = fopen("output/vnValue.m","w");
-    FILE* MT_file = fopen("output/mtValue.m","w");
-    FILE* AES_file = fopen("output/aesValue.m","w");
+    FILE* rand_file = fopen("output/rand_value.m","w");
+    FILE* VN_file = fopen("output/VN_value.m","w");
+    FILE* MT_file = fopen("output/MT_value.m","w");
+    FILE* AES_file = fopen("output/AES_value.m","w");
 
     fprintf(rand_file,"function [x] = randValue()\nx = [");
     fprintf(VN_file,"function [x] = vnValue()\nx = [");

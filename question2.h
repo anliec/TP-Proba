@@ -1,4 +1,4 @@
-#ifndef QUESTION_2
+﻿#ifndef QUESTION_2
 #define QUESTION_2
 
 #include <stdlib.h>
