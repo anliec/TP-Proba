@@ -1,8 +1,8 @@
 #ifndef FILEGENERATOR_H
 #define FILEGENERATOR_H
 
-void generateFile();
+void generateFile(int nbr_of_value);
 void init();
-void writeFile();
+void writeFile(int nbr_of_value);
 
 #endif
