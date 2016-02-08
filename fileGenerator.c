@@ -1,4 +1,4 @@
-﻿#include "fileGenerator.h"
+#include "fileGenerator.h"
 
 #include "von_neumann.h"
 #include "aes.h"

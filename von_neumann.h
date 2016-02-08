@@ -1,4 +1,4 @@
-﻿#ifndef VON_NEUMANN_H
+#ifndef VON_NEUMANN_H
 #define VON_NEUMANN_H
 
 #include <stdlib.h>
