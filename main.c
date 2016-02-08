@@ -19,5 +19,9 @@ int main()
 	\\question 1
     generateFile(1024);
 
+
+    //Quetion 3
+    double pValue = Runs();
+
     return 0;
 }
