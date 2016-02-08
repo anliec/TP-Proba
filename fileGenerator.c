@@ -49,7 +49,7 @@ void writeFile(int nbr_of_value)
     fprintf(MT_file,"function [x] = mtValue()\nx = [");
     fprintf(AES_file,"function [x] = aesValue()\nx = [");
 
-    for(i=0 ; i<nbr_of_value-1 ; i++)
+    for( i = 0 ; i < nbr_of_value-1 ; i++)
     {
         // sorties des generateurs
         output_rand = rand(); // rand du C

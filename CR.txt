@@ -1,0 +1,7 @@
+CR TP Génération de nombres aléatoires et probabilités
+
+Question 1 :
+
+Les générateurs rand de C, de Mersenne-Twister et AES suivent globalement une loi uniforme, observés avec une précision d'environ 20, mais pour la même précision, ce n'est absoluement pas le cas pour le générateur de von Neumann. En effet quelques valeurs discrètes sont très privilégiées, d'autres à probabilité nulle;
+
+Question 2 :s

@@ -16,9 +16,18 @@ int rdtsc()
 
 int main()
 {
+<<<<<<< HEAD
+	\\question 1
+    generateFile(1024);
+	
+	\\question 2
+
+	
+=======
     init();
     writeFile(10);
     //generateFile(10);
+>>>>>>> 60d7d162bfeda35e98767e1153666fd952358b15
 
 
     //Quetion 3
