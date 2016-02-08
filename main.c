@@ -16,7 +16,12 @@ int rdtsc()
 
 int main()
 {
+	\\question 1
     generateFile(1024);
+	
+	\\question 2
+
+	
 
     return 0;
 }
