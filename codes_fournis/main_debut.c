@@ -17,7 +17,7 @@ int rdtsc()
 
 
 int main()
-{
+{	
 	word16 x=1111; // nombre entre 1000 et 9999 pour Von Neumann
 	struct mt19937p mt; // Pour Mersenne-Twister
 	int tmp = rand(); // Pour Mersenne-Twister
