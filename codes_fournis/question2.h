@@ -6,6 +6,8 @@
 #include <stdio.h>
 #include <math.h>
 
-double Frequency(int n);
+#include "von_neumann.h"
+
+double Frequency(unsigned int *tab, int tabLength, int valLength);
 
 #endif

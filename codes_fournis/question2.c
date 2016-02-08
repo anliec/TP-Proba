@@ -1,28 +1,16 @@
-#include "von_neumann.h"
+#include "question2.h"
 
-int Dec_size(word32 e)
+double Frequency(unsigned int *tab, int tabLength, int valLength)
 {
-  unsigned i = 0;
-  while (e != 0)
-    {
-	  ++i;
-      e = e/10;
-    }
-  return i;
+	const int length = tabLength * valLength;
+	char binary[length];
+	int i, j;
+	for(i = 0 ; i < tabLength ; i++)
+	{
+		for(j = 0 ; j < valLength ; j++)
+		{
+			binary[
+		}
+	}
 }
 
-word16 Von_Neumann(word16 *next)
-{
-   word32 result;
-   int pds,i;
-   result = (*next)*(*next);
-   pds = Dec_size(result);
-   pds=(pds-4)/2;
-   for(i=0; i<pds; i++)
-   {
-    result = (result) / 10 ;
-   }
-   result = result % 10000;
-   *next = result;
-   return ((word16) result);
-}
