@@ -16,7 +16,9 @@ int rdtsc()
 
 int main()
 {
-    generateFile(1024);
+    init();
+    writeFile(10);
+    //generateFile(10);
 
     return 0;
 }
