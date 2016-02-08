@@ -70,5 +70,6 @@ Thumbs.db
 *.dll
 *.exe
 *.exe.stackdump
+*.h.gch
 
 
