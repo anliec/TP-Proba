@@ -16,12 +16,12 @@ int rdtsc()
 
 int main()
 {
-	\\question 1
-    generateFile(1024);
+    //question 1
+    //generateFile(1024);
 
 
     //Quetion 3
-    double pValue = Runs();
+    unctionQ3();
 
     return 0;
 }

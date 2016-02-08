@@ -14,7 +14,7 @@ double Frequency(unsigned long *tab, int tabLength, int valLength)
 		}
 	}
 	
-	double pValeur = erfc(abs(sum) / sqrt(tabLength * valLength)));
+    double pValeur = erfc(abs(sum) / sqrt(tabLength * valLength));
 	
 	return pValeur;
 	
@@ -41,7 +41,7 @@ void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *aesTab, int nb
         aesTab[i] = AES(Px, Kex); // AES
 	}
 }
-
+/*
 void qualityTest(int nbr_of_value)
 {
 	int randTab[nbr_of_value];
@@ -55,4 +55,4 @@ void qualityTest(int nbr_of_value)
 	double pVN = 
 	double pMT = 
 	double pAES = 
-}
+}*/
