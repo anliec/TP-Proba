@@ -37,6 +37,33 @@ int main()
     init_rand(Kx, Px, NK, NB, 45);
     KeyExpansion(Kex,Kx); // AES : sous-clefs
 
+    ///init files
+    FILE* rand_file = fopen("output/rand_value.m","w");
+    FILE* VN_file = fopen("output/VN_value.m","w");
+    FILE* MT_file = fopen("output/MT_value.m","w");
+    FILE* AES_file = fopen("output/AES_value.m","w");
+
+    fprintf(rand_file,"function [x] = randValue()\nx = [");
+    fprintf(VN_file,"function [x] = vnValue()\nx = [");
+    fprintf(MT_file,"function [x] = mtValue()\nx = [");
+    fprintf(AES_file,"function [x] = aesValue()\nx = [");
+
+    int nbr_ite = 10;
+
+    for(int i=0 ; i<nbr_ite-1 ; i++)
+    {
+        // sorties des generateurs
+        output_rand = rand(); // rand du C
+        output_VN = Von_Neumann(&x); // Von Neumann
+        output_MT = genrand(&mt); // Mersenne-Twister
+        output_AES = AES(Px, Kex); // AES
+
+        // affichage
+        fprintf(rand_file," %u;",output_rand);
+        fprintf(VN_file, " %u;",output_VN);
+        fprintf(MT_file," %u;",output_MT);
+        fprintf(AES_file," %u;",output_AES);
+    }
 
     // sorties des generateurs
     output_rand = rand(); // rand du C
@@ -45,12 +72,15 @@ int main()
     output_AES = AES(Px, Kex); // AES
 
     // affichage
-    printf("- Generation de nombres aleatoires -\n");
-    printf("rand du C : %u \n",output_rand);
-    printf("Von Neumann : %u\n",output_VN);
-    printf("Mersenne Twister : %u\n",output_MT);
-    printf("AES : %u\n",output_AES);
+    fprintf(rand_file," %u",output_rand);
+    fprintf(VN_file, " %u",output_VN);
+    fprintf(MT_file," %u",output_MT);
+    fprintf(AES_file," %u",output_AES);
 
+    fprintf(rand_file,"]\nend");
+    fprintf(VN_file,"]\nend");
+    fprintf(MT_file,"]\nend");
+    fprintf(AES_file,"]\nend");
 
     return 0;
 }
