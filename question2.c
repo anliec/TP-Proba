@@ -20,7 +20,7 @@ double Frequency(unsigned long *tab, int tabLength, int valLength)
 	
 }
 
-void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *mtAES, int nbr_of_value)
+void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *aesTab, int nbr_of_value)
 {
 	x=1111; // nombre entre 1000 et 9999 pour Von Neumann
     tmp = rand(); // Pour Mersenne-Twister
@@ -42,4 +42,15 @@ void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *mtAES, int nbr
 	}
 }
 
-
+void qualityTest(int nbr_of_value)
+{
+	int randTab[nbr_of_value];
+	word16 vnTab[nbr_of_value];
+	word32 mtTab[nbr_of_value];
+	word32 aesTab[nbr_of_value];
+	
+	double pRand = 
+	double
+	double
+	double
+}
