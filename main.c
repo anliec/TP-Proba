@@ -49,8 +49,9 @@ int main()
     fprintf(AES_file,"function [x] = aesValue()\nx = [");
 
     int nbr_ite = 10;
-
-    for(int i=0 ; i<nbr_ite-1 ; i++)
+	int i;
+	
+    for( i=0 ; i<nbr_ite-1 ; i++)
     {
         // sorties des generateurs
         output_rand = rand(); // rand du C

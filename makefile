@@ -12,7 +12,7 @@ OBJ =  $(REAL:.c=.o)
 OUTPUT = -o
 RMFLAGS = -f
 EDLOPTION = 
-CPPFLAGS = -c
+CPPFLAGS = -c -std=c99
 COMPFLAGS = -Wall #-FMAP
 EDLFALGS = 
 LIBS =
