@@ -11,6 +11,8 @@
 
 double Frequency(unsigned int *tab, int tabLength, int valLength);
 
-void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *mtAES, int nbr_of_value);
+void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *aesTab, int nbr_of_value);
+
+void qualityTest(int nbr_of_value);
 
 #endif
