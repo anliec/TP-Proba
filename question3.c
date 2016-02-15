@@ -39,8 +39,6 @@ double Runs(unsigned long *tab, int tabLenght, int valLenght)
 {
     double pi = oneProportion(tab,tabLenght,valLenght);
 
-    //printf("pi = %f\n",pi);
-
     if( fabs(pi-0.5) >= 2.0/sqrt(valLenght))
     {
         return 0.0;
@@ -64,7 +62,7 @@ double oneProportion(unsigned long *tab, int tabLenght, int valLenght)
         val = tab[x];
         for(y=0 ; y<valLenght ; y++)
         {
-            if( 1 == val & 1)
+            if( 1 == (val & 1))
             {
                 ret+=1.0;
             }
@@ -80,7 +78,7 @@ int numberOfContinousSuite(unsigned *tab, int tabLenght, int valLenght)
 {
     int ret=0;
     int x,y;
-    unsigned currant,last,val=2;
+    unsigned currant,last=2,val;
     for(x=0 ; x<tabLenght ; x++)
     {
         val = tab[x];

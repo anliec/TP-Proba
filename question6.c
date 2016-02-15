@@ -10,7 +10,14 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
     while(currantTime < D)
     {
         currantTime += Exponentielle(lambda);
-        retArrivee[i] = currantTime;
+        if(currantTime < D)
+        {
+            retArrivee[i] = currantTime;
+        }
+        else
+        {
+            break;
+        }
         i++;
     }
     i=0;
@@ -32,22 +39,22 @@ void evoTemp(double *Arrivee, double *Depart)
     int currantCliantNumber=0;
     while(Arrivee[a]!= 0.0 && Depart[d]!=0.0)
     {
-        if(Arrivee[a]==0.0)
-        {//if arrival is ended
+        /*if(Arrivee[a]==0.0)
+        {//no more arrival
             currantCliantNumber--;
-            printf(" -at time %f there are %d cliant on server1\n",Depart[d],currantCliantNumber);
+            printf(" -at time %f there are %d client on server\n",Depart[d],currantCliantNumber);
             d++;
         }
-        else if(Arrivee[a] > Depart[d] )
+        else */if(Arrivee[a] > Depart[d] )
         {//leaving is first
             currantCliantNumber--;
-            printf(" -at time %f there are %d cliant on server2\n",Depart[d],currantCliantNumber);
+            printf(" -at time %f there are %d client on server\n",Depart[d],currantCliantNumber);
             d++;
         }
         else
         {//arrival is first
             currantCliantNumber++;
-            printf(" -at time %f there are %d cliant on server3\n",Arrivee[a],currantCliantNumber);
+            printf(" -at time %f there are %d client on server\n",Arrivee[a],currantCliantNumber);
             a++;
         }
     }
