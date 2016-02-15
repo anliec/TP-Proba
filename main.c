@@ -8,6 +8,7 @@
 #include "question2.h"
 #include "question4.h"
 #include "question6.h"
+#include "question7.h"
 
 #define ARRAY_MAX_SIZE 1000
 
@@ -38,7 +39,7 @@ int main()
     }
 
     //Question 6
-    double D = 10.0;
+	double D = 180.0;
     double arrivee[MAX_TAB_SIZE], depart[MAX_TAB_SIZE];
     for(int i=0 ; i<MAX_TAB_SIZE ; i++)
     {
@@ -47,6 +48,14 @@ int main()
     }
     FileMM1(1.0,1.0,D,arrivee,depart);
     evoTemp(arrivee,depart,D);
+
+	//Question 7
+    /*evoTemp(arrivee,depart);
+	evolution(arrivee, depart, D);
+	double temps[MAX_TAB_SIZE];
+	unsigned int nombre[MAX_TAB_SIZE];
+
+    evolTab(arrivee, depart, temps, nombre, D);*/
 	
 	
 
