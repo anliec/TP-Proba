@@ -24,13 +24,13 @@ void evolution(double *Arrivee, double *Depart)
         else if(Arrivee[a] > Depart[d] )
         {//leaving is first
             currantCliantNumber--;
-            printf(" -at time %f there are %d cliant on server\n",Depart[d],currantCliantNumber);
+            fprintf(" %f %d;",Depart[d],currantCliantNumber);
             d++;
         }
         else
         {//arrival is first
             currantCliantNumber++;
-            printf(" -at time %f there are %d cliant on server\n",Arrivee[a],currantCliantNumber);
+            fprintf(" %f %d;",Arrivee[a],currantCliantNumber);
             a++;
         }
     }
