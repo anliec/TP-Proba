@@ -3,7 +3,7 @@
 
 #include <stdlib.h>
 #include <stdio.h>
-#include <math.h>
+//#include <math.h>
 
 #include "von_neumann.h"
 #include "aes.h"

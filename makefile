@@ -1,7 +1,7 @@
 EXE = B3129
-COMP = gcc
+COMP = g++
 RM = rm
-EDL = gcc
+EDL = g++
 ECHO = @echo
 INTF = fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h
 REAL = $(INTF:.h=.c) main.c

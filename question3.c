@@ -1,5 +1,5 @@
 #include "question3.h"
-#include "math.h"
+#include <math.h>
 #include "question2.h"
 
 #define BASH_GREEN "[1;32m"
@@ -91,4 +91,5 @@ int numberOfContinousSuite(unsigned *tab, int tabLenght, int valLenght)
             val >>= 1;
         }
     }
+    return ret;
 }
