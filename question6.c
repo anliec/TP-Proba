@@ -17,7 +17,7 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
     currantTime = 0.0;
     while (retArrivee[i] != 0.0)
     {
-        if(i>0 && retDepart[i-1] > currantTime)
+        if(i>0 && retDepart[i-1] > retArrivee[i])
             currantTime = retDepart[i-1];
         else
             currantTime = retArrivee[i];
