@@ -18,7 +18,7 @@ int main()
     qualityTest(1024);
 
     //Quetion 3
-    testFunctionQ3(void);
+    testFunctionQ3();
 
     return 0;
 }
