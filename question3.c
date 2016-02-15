@@ -39,7 +39,7 @@ double Runs(unsigned long *tab, int tabLenght, int valLenght)
 {
     double pi = oneProportion(tab,tabLenght,valLenght);
 
-    if( abs(pi-0.5) >= 2.0/sqrt(valLenght))
+    if( fabs(pi-0.5) >= 2.0/sqrt(valLenght))
     {
         return 0.0;
     }
