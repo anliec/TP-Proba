@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+// question 6
 void FileMM1(double lambda, double mu, double D, double *retArrivee, double *retDepart)
 {
     double currantTime=0.0;
@@ -24,7 +25,7 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
     currantTime = 0.0;
     while (retArrivee[i] != 0.0)
     {
-        if(i>0 && retDepart[i-1] > retArrivee[i])
+        if( i > 0 && retDepart[i-1] > retArrivee[i])
             currantTime = retDepart[i-1];
         else
             currantTime = retArrivee[i];
@@ -33,6 +34,7 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
     }
 }
 
+// question 7
 void evoTemp(double *Arrivee, double *Depart)
 {
     int a=0,d=0;
