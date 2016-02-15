@@ -4,4 +4,60 @@ Question 1 :
 
 Les générateurs rand de C, de Mersenne-Twister et AES suivent globalement une loi uniforme, observés avec une précision d'environ 20, mais pour la même précision, ce n'est absoluement pas le cas pour le générateur de von Neumann. En effet quelques valeurs discrètes sont très privilégiées, d'autres à probabilité nulle;
 
-Question 2 :s
+Question 2 :
+
+sortie du programme:
+
+le rand de C avec les 4 bits de poids faible est ( p = 0.617075 )valide
+le rand de C est avec les 4 bits de poids fort est( p = 11.711456 )valide
+le Von Neumann est ( p = 0.000000 )non valide
+le Mersenne Twister est ( p = 0.106726 )valide
+le AES est ( p = 0.299008 )valide
+
+nous pouvons donc remarquer que le générateur de Von Neumann ne passe pas le teste de fréquence monobit.
+
+Question 3 :
+
+sortie du programme:
+
+test de Runs:
+ -Pvalue de rand     : 0.000000 -> la sequence n'est donc pas aleatoire 
+ -Pvalue de rand LSB : 0.000000 -> la sequence n'est donc pas aleatoire 
+ -Pvalue de rand MSB : 0.787269 -> la sequence a donc l'air d'etre aleatoire 
+ -Pvalue de vn       : 0.125220 -> la sequence a donc l'air d'etre aleatoire 
+ -Pvalue de aes      : 0.435018 -> la sequence a donc l'air d'etre aleatoire 
+ -Pvalue de mt       : 0.314887 -> la sequence a donc l'air d'etre aleatoire  
+
+Il semble donc que le teste des runs exclue la fonction rand() en particulier pour les bits de poids faible, vu que les bits de poids fort optiennent un resultat largement suffisant pour passer le test.
+
+Question 4 :
+
+D'après les résultat précédent une bonne façons de générer une variable aléatoire est d'utiliser la méthode AES puis de le ramener à l'intervalle [0;1] en le divisant par la valeur maximale théorique de la fonction.
+
+Question 5 :
+
+En se servant de la fonction présédente et en apliquant la formule suivante le résultat est imédiat.
+val = -(ln(1-Alea())/lambda
+
+Question 6 et 7 :
+
+Example du programme sur un temps de 10 avec lambda et mu ayant pour valeur 1.0:
+
+ -at time 0.000000 there are 0 client on server
+ -at time 0.932677 there are 1 client on server
+ -at time 1.643600 there are 2 client on server
+ -at time 1.821462 there are 1 client on server
+ -at time 2.924147 there are 0 client on server
+ -at time 6.691285 there are 1 client on server
+ -at time 6.704357 there are 2 client on server
+ -at time 7.010011 there are 1 client on server
+ -at time 7.724882 there are 0 client on server
+ -at time 8.122467 there are 1 client on server
+ -at time 8.150160 there are 2 client on server
+ -at time 8.497927 there are 3 client on server
+
+
+
+
+
+

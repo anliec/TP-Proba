@@ -35,29 +35,33 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
 }
 
 // question 7
-void evoTemp(double *Arrivee, double *Depart)
+void evoTemp(double *Arrivee, double *Depart, double D)
 {
     int a=0,d=0;
     int currantCliantNumber=0;
-    while(Arrivee[a]!= 0.0 && Depart[d]!=0.0)
+    double currantTime = 0.0;
+    while( (Arrivee[a]!= 0.0 || Depart[d]!=0.0) && currantTime < D)
     {
-        /*if(Arrivee[a]==0.0)
+        printf(" -at time %f there are %d client on server\n",currantTime,currantCliantNumber);
+
+        if(Arrivee[a]==0.0)
         {//no more arrival
             currantCliantNumber--;
-            printf(" -at time %f there are %d client on server\n",Depart[d],currantCliantNumber);
+            currantTime = Depart[d];
             d++;
         }
-        else */if(Arrivee[a] > Depart[d] )
+        else if(Arrivee[a] > Depart[d] )
         {//leaving is first
             currantCliantNumber--;
-            printf(" -at time %f there are %d client on server\n",Depart[d],currantCliantNumber);
+            currantTime = Depart[d];
             d++;
         }
         else
         {//arrival is first
             currantCliantNumber++;
-            printf(" -at time %f there are %d client on server\n",Arrivee[a],currantCliantNumber);
+            currantTime = Arrivee[a];
             a++;
         }
     }
+    printf("next leaving is at %f\n",Depart[d+1]);
 }

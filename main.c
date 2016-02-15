@@ -38,14 +38,15 @@ int main()
     }
 
     //Question 6
+    double D = 10.0;
     double arrivee[MAX_TAB_SIZE], depart[MAX_TAB_SIZE];
     for(int i=0 ; i<MAX_TAB_SIZE ; i++)
     {
         arrivee[i]=0.0;
         depart[i]=0.0;
     }
-    FileMM1(1.0,1.0,10.0,arrivee,depart);
-    evoTemp(arrivee,depart);
+    FileMM1(1.0,1.0,D,arrivee,depart);
+    evoTemp(arrivee,depart,D);
 	
 	
 
