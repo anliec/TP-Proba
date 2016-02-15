@@ -1,24 +1,78 @@
 #include "question2.h"
 #include <math.h>
 
-double Frequency(unsigned long *tab, int tabLength, int valLength)
+double FrequencyWord16(word16 *tab, int tabLength)
 {
 	int sum = 0;
 	
 	int i, j;
 	for(i = 0 ; i < tabLength ; i++)
 	{
-		for(j = 0 ; j < valLength ; j++)
+		for(j = 0 ; j < 16 ; j++)
 		{
-			sum += (tab[i] & 1) ? 1 : (-1) ;
+			sum += (tab[i] & (1u << j)) ? 1 : (-1) ;
+		}
+	}
+	
+	double pValeur = erfc(fabs(sum) / (double) sqrt(tabLength * 16));
+	
+	return pValeur;
+}
+
+double FrequencyWord32(word32 *tab, int tabLength)
+{
+	int sum = 0;
+	
+	int i, j;
+	for(i = 0 ; i < tabLength ; i++)
+	{
+		for(j = 0 ; j < 32 ; j++)
+		{
+			sum += (tab[i] & (1u << j)) ? 1 : (-1) ;
+		}
+	}
+
+    double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 32));
+	
+	return pValeur;
+}
+
+double FrequencyRandWeak(int *tab, int tabLength)
+{
+	int sum = 0;
+	
+	int i, j;
+	for(i = 0 ; i < tabLength ; i++)
+	{
+		for(j = 0 ; j < 4 ; j++)
+		{
+			sum += (tab[i] & (1u << j)) ? 1 : (-1) ;
+			//sum += (tab[i] & 1) ? 1 : (-1) ;
 			tab[i] >>= 1;
 		}
 	}
 
-    double pValeur = erfc(abs(sum) / sqrt(tabLength * valLength));
+	double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 4));
 	
 	return pValeur;
+}
+
+double FrequencyRandStrong(int *tab, int tabLength)
+{
+	int sum = 0;
 	
+	int i, j;
+	for(i = 0 ; i < tabLength ; i++)
+	{
+		for(j = 0 ; j > 4 ; j++)
+		{
+			sum += (tab[i] & (1u << 31 - j)) ? 1 : (-1) ;		
+		}
+	}
+
+    double pValeur = ( fabs(sum) / (double) sqrt(tabLength * 4));
+	
+	return pValeur;
 }
 
 void fillTabs(int *randTab, word16 *vnTab, word32 *mtTab, word32 *aesTab, int nbr_of_value)
@@ -63,13 +117,17 @@ void qualityTest(int nbr_of_value)
 
     fillTabs(randTab, vnTab, mtTab, aesTab, nbr_of_value);
 
-	double pRand = Frequency(randTab, nbr_of_value, 4);
-	double pVN = Frequency(vnTab, nbr_of_value, 16);
-	double pMT = Frequency(mtTab, nbr_of_value, 32);
-	double pAES = Frequency(aesTab, nbr_of_value, 32);
+	double pRandWeak = FrequencyRandWeak(randTab, nbr_of_value);
+	double pRandStrong = FrequencyRandStrong(randTab, nbr_of_value);
+	double pVN = FrequencyWord16(vnTab, nbr_of_value);
+	double pMT = FrequencyWord32(mtTab, nbr_of_value);
+	double pAES = FrequencyWord32(aesTab, nbr_of_value);
 	
-	printf("par le test question 2 : \nle rand de C est ( p = %f )", pRand);
-	printf((pRand > 0.01) ? "valide\n" : "non valide\n"); 
+	printf("par le test question 2 : \nle rand de C avec les 4 bits de poids faible est ( p = %f )", 
+		pRandWeak);
+	printf((pRandWeak > 0.01) ? "valide\n" : "non valide\n");
+	printf("le rand de C est avec les 4 bits de poids fort est( p = %f )", pRandStrong);
+	printf((pRandStrong > 0.01) ? "valide\n" : "non valide\n"); 
 	printf("le Von Neumann est ( p = %f )", pVN);
 	printf((pVN > 0.01) ? "valide\n" : "non valide\n"); 
 	printf("le Mersenne Twister est ( p = %f )", pMT);
