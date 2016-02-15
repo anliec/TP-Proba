@@ -14,7 +14,7 @@ double FrequencyWord16(word16 *tab, int tabLength)
 		}
 	}
 	
-	double pValeur = erfc(fabs(sum) / (double) sqrt(tabLength * 16) / (double) sqrt(2));
+	double pValeur = erfc(fabs(sum) / (double) sqrt(tabLength * 16.0) / (double) sqrt(2.0));
 	
 	return pValeur;
 }
@@ -32,7 +32,7 @@ double FrequencyWord32(word32 *tab, int tabLength)
 		}
 	}
 
-    double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 32) / (double) sqrt(2));
+    double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 32.0) / (double) sqrt(2.0));
 	
 	return pValeur;
 }
@@ -51,7 +51,7 @@ double FrequencyRandWeak(int *tab, int tabLength)
 		}
 	}
 
-	double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 4) / (double) sqrt(2));
+	double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 4.0) / (double) sqrt(2.0));
 	
 	return pValeur;
 }
@@ -65,11 +65,11 @@ double FrequencyRandStrong(int *tab, int tabLength)
 	{
 		for(j = 0 ; j < 4 ; j++)
 		{
-			sum += (tab[i] & (1u << 31 - j)) ? 1 : (-1) ;		
+			sum += (tab[i] & (1u << (31 - j))) ? 1 : (-1) ;		
 		}
 	}
 
-    double pValeur = ( fabs(sum) / (double) sqrt(tabLength * 4) / (double) sqrt(2));
+    double pValeur = erfc( fabs(sum) / (double) sqrt(tabLength * 4.0) / (double) sqrt(2.0));
 	
 	return pValeur;
 }
