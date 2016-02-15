@@ -44,10 +44,14 @@ double Runs(unsigned long *tab, int tabLenght, int valLenght)
         return 0.0;
     }
 
-    int vnObs = numberOfContinousSuite(tab,tabLenght,valLenght);
-    int n = valLenght*tabLenght;
+    double vnObs = numberOfContinousSuite(tab,tabLenght,valLenght);
+    double n = valLenght*tabLenght;
 
+<<<<<<< HEAD
+    return erfc((vnObs/(2.0*sqrt(2.0*n)*pi*(1.0-pi)))-sqrt(n/2.0));
+=======
     return ((vnObs/(2*sqrt(2*n)*pi*(1.0-pi)))-sqrt(n/2.0));
+>>>>>>> 621a4b058d22153b7e7acbd51ab5136aec7c59bc
 }
 
 
@@ -63,7 +67,7 @@ double oneProportion(unsigned long *tab, int tabLenght, int valLenght)
         {
             if( 1 == val & 1)
             {
-                ret++;
+                ret+=1.0;
             }
             val >>= 1;
         }

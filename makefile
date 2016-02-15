@@ -3,7 +3,7 @@ COMP = g++
 RM = rm
 EDL = g++
 ECHO = @echo
-INTF = fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h question3.h
+INTF = fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h question3.h question4.h question6.h
 REAL = $(INTF:.h=.c) main.c
 OBJ =  $(REAL:.c=.o)
 OUTPUT = -o
@@ -24,12 +24,15 @@ $(EXE) : $(OBJ)
 	$(ECHO) "Edition des liens"
 	$(EDL) $(OUTPUT) $(EXE) $(EDLFLAGS) $(LIBPATH) $(OBJ) $(LIBS)
 
-main.o : fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h question3.h
+main.o : fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h question3.h question4.h question6.h
 mersenne_twister.o : mersenne_twister.h
 von_neumann.o : von_neumann.h
 aes.o :aes.h
 fileGenerator.o : fileGenerator.h
 question2.o : von_neumann.h aes.h mersenne_twister.h
+question3.o : question3.h question2.h
+question4.o : question4.h
+question6.o : question6.h question4.h
 
 %.o : %.cpp
 	$(ECHO) "Compilation de <$<>"
