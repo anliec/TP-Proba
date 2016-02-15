@@ -1,12 +1,9 @@
-﻿#makefile de B3129
-#la variable EXE correspond au nom du test a effectuer 
-
 EXE = B3129
 COMP = gcc
 RM = rm
 EDL = gcc
 ECHO = @echo
-INTF = fileGenerator.h mersenne_twister.h von_neumann.h aes.h
+INTF = fileGenerator.h mersenne_twister.h von_neumann.h aes.h question2.h
 REAL = $(INTF:.h=.c) main.c
 OBJ =  $(REAL:.c=.o)
 OUTPUT = -o
@@ -32,6 +29,7 @@ mersenne_twister.o : mersenne_twister.h
 von_neumann.o : von_neumann.h
 aes.o :aes.h
 fileGenerator.o : fileGenerator.h
+question2.o : von_neumann.h aes.h mersenne_twister.h
 
 %.o : %.cpp
 	$(ECHO) "Compilation de <$<>"
