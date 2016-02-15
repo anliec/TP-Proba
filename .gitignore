@@ -72,4 +72,5 @@ Thumbs.db
 *.exe.stackdump
 *.h.gch
 
-
+#matlab generated file
+*.m
