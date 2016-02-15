@@ -1,8 +1,10 @@
-#ifndef QUESTION6_H
-#define QUESTION6_H
+#ifndef QUESTION7_H
+#define QUESTION7_H
 
-#define MAX_TAB_SIZE 1000
+#include <stdlib.h>
+#include <stdio.h>
 
-void evolution(double * Arrivee, double * Depart);
+void evolution(double *Arrivee, double *Depart, double D);
+void evolTab(double *Arrivee, double *Depart, double *temps, unsigned int *nombre, double D);
 
 #endif
