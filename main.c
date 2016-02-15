@@ -4,8 +4,8 @@
 #include <math.h>
 
 #include "fileGenerator.h"
-#include "question2.h"
 #include "question3.h"
+#include "question2.h"
 
 #define ARRAY_MAX_SIZE 1000
 
