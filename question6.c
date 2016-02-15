@@ -37,13 +37,19 @@ void FileMM1(double lambda, double mu, double D, double *retArrivee, double *ret
 // question 7
 void evoTemp(double *Arrivee, double *Depart, double D)
 {
+
+	FILE* evolFile = fopen("output/evolValue.m","w");
+	fprintf(evolFile,"function [x] = evolValue()\nx = [");
+
     int a=0,d=0;
     int currantCliantNumber=0;
     double currantTime = 0.0;
-    while( (Arrivee[a]!= 0.0 || Depart[d]!=0.0) && currantTime < D)
+    
+	while( (Arrivee[a]!= 0.0 || Depart[d]!=0.0) && currantTime < D)
     {
-        printf(" -at time %f there are %d client on server\n",currantTime,currantCliantNumber);
-
+        printf(" -at time %f there are %d client on server\n",currantTime,currantCliantNumber);	
+		fprintf(evolFile," %f %d;",currantTime,currantCliantNumber);
+		
         if(Arrivee[a]==0.0)
         {//no more arrival
             currantCliantNumber--;
@@ -63,5 +69,6 @@ void evoTemp(double *Arrivee, double *Depart, double D)
             a++;
         }
     }
-    printf("next leaving is at %f\n",Depart[d+1]);
+	
+    fprintf(evolFile,"]\nend");
 }

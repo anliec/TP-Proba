@@ -47,17 +47,9 @@ int main()
         depart[i]=0.0;
     }
     FileMM1(1.0,1.0,D,arrivee,depart);
-    evoTemp(arrivee,depart,D);
-
-	//Question 7
-    /*evoTemp(arrivee,depart);
-	evolution(arrivee, depart, D);
-	double temps[MAX_TAB_SIZE];
-	unsigned int nombre[MAX_TAB_SIZE];
-
-    evolTab(arrivee, depart, temps, nombre, D);*/
-	
-	
+    
+	//Queston 7
+	evoTemp(arrivee,depart,D);
 
     return 0;
 }

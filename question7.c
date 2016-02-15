@@ -11,7 +11,6 @@ void evolution(double *Arrivee, double *Depart, double D)
 	unsigned int currentTime = 0;
 	
     FILE* evolFile = fopen("output/evolValue.m","w");
-
     fprintf(evolFile,"function [x] = evolValue()\nx = [");
 	
     while((Arrivee[a]!= 0.0 || Depart[d]!=0.0 ) && currentTime >= D )
