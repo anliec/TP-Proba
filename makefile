@@ -16,7 +16,7 @@ LIBS =
 LIBPATH =
 INPATH =
 CLEAN = clean
-SOS = backup
+SOSgutr = backup
 
 EXEC_OPT =
 

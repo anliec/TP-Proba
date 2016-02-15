@@ -14,7 +14,7 @@
 int main()
 {
 	//question 1
-    generateFile(1024);
+   generateFile(1024);
 
 	//question 2
     //qualityTest(1024);
