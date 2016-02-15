@@ -17,7 +17,7 @@ int main()
    generateFile(1024);
 
 	//question 2
-    //qualityTest(1024);
+    qualityTest(1024);
 
     //Quetion 3
     testFunctionQ3();
